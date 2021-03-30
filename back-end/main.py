@@ -1,34 +1,3 @@
-"""Simple example app to demonstrate storing info for users.
-
-CSSI-ers!  If you want to have users log in to your site and store
-info about them, here is a simple AppEngine app demonstrating
-how to do that.  The typical usage is:
-
-- First, user visits the site, and sees a message to log in.
-- The user follows the link to the Google login page, and logs in.
-- The user is redirected back to your app's signup page to sign
-  up.
-- The user then gets a page thanking them for signup.
-
-- In the future, whenever the user is logged in, they'll see a 
-  message greeting them by name.
-
-Try logging out and logging back in with a fake email address
-to create a different account (when you "log in" running your
-local server, it doesn't ask for a password, and you can make
-up whatever email you like).
-
-The key piece that makes all of this work is tying the datastore
-entity to the AppEngine user id, by passing the special property
-id when creating the datastore entity.
-
-cssi_user = CssiUser(..., id=user.user_id())
-cssi_user.put()
-
-and then, looking it up later by doing
-
-cssi_user = CssiUser.get_by_id(user.user_id())
-"""
 
 import webapp2
 import jinja2
