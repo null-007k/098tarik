@@ -4,6 +4,7 @@ import jinja2
 import os
 from google.appengine.api import users
 from google.appengine.ext import ndb
+from handle import *
 
 TEMPLATE = jinja2.Environment(
 	loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -68,5 +69,11 @@ class MainHandler(webapp2.RequestHandler):
         cssi_user.first_name)
 
 app = webapp2.WSGIApplication([
-  ('/', MainHandler)
+     ('/', MainHandler),
+     ('/I', IndexHandler),
+     ('/psearch', ProductSearchHandler),
+     ('/product', ShowProductHandler),
+     ('/reviews', ShowReviewsHandler),
+     ('/create_review', CreateReviewHandler),
+     ('/get_store_locations', StoreLocationHandler)
 ], debug=True)
